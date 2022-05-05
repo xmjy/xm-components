@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <groupId>indi.xm.component</groupId>
+    <artifactId>xm-dependencies</artifactId>
+    <description>xm 依赖定义库</description>
+    <version>1.0-RELEASE</version>
+    <packaging>pom</packaging>
+    <modelVersion>4.0.0</modelVersion>
+
+    <properties>
+        <maven.compiler.source>8</maven.compiler.source>
+        <maven.compiler.target>8</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+        <spring.boot.version>2.5.8</spring.boot.version>
+        <spring.cloud.version>2020.0.5</spring.cloud.version>
+        <spring.boot.mybatis.version>2.2.1</spring.boot.mybatis.version>
+        <alibaba.cloud.version>2021.1</alibaba.cloud.version>
+        <alibaba.nacos.springcontext>1.1.1</alibaba.nacos.springcontext>
+
+        <mysql.connector.version>8.0.27</mysql.connector.version>
+        <junit.version>4.13.2</junit.version>
+        <log4j.version>2.17.0</log4j.version>
+        <dom4j.version>1.1</dom4j.version>
+        <slf4j.version>1.7.32</slf4j.version>
+        <ojdbc.version>12.1.0.2</ojdbc.version>
+        <lombok.version>1.18.20</lombok.version>
+        <apache.commonlang.version>3.12.0</apache.commonlang.version>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>${spring.boot.version}</version>
+                <scope>import</scope>
+                <type>pom</type>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring.cloud.version}</version>
+                <scope>import</scope>
+                <type>pom</type>
+            </dependency>
+            <dependency>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>spring-cloud-alibaba-dependencies</artifactId>
+                <version>${alibaba.cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.mybatis.spring.boot</groupId>
+                <artifactId>mybatis-spring-boot-starter</artifactId>
+                <version>${spring.boot.mybatis.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.alibaba.nacos</groupId>
+                <artifactId>nacos-spring-context</artifactId>
+                <version>${alibaba.nacos.springcontext}</version>
+            </dependency>
+            <dependency>
+                <groupId>dom4j</groupId>
+                <artifactId>dom4j</artifactId>
+                <version>${dom4j.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>log4j</groupId>
+                <artifactId>log4j</artifactId>
+                <version>${log4j.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>junit</groupId>
+                <artifactId>junit</artifactId>
+                <scope>test</scope>
+                <version>${junit.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>slf4j-api</artifactId>
+                <version>${slf4j.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.oracle</groupId>
+                <artifactId>ojdbc7</artifactId>
+                <version>${ojdbc.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${lombok.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-lang3</artifactId>
+                <version>${apache.commonlang.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <version>${mysql.connector.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+<!--    <profiles>-->
+<!--        <profile>-->
+<!--            <id>dev</id>-->
+<!--            <properties>-->
+<!--                <package.environment>dev</package.environment>-->
+<!--                <repository.id>ehire-dev</repository.id>-->
+<!--                <repository.name>Dev Repository</repository.name>-->
+<!--                <repository.url>http://10.100.3.237:8081/repository/ehire-server-snapshot/</repository.url>-->
+<!--            </properties>-->
+<!--            <activation>-->
+<!--                <activeByDefault>true</activeByDefault>-->
+<!--            </activation>-->
+<!--        </profile>-->
+<!--        <profile>-->
+<!--            <id>dev-release</id>-->
+<!--            <properties>-->
+<!--                <package.environment>dev-release</package.environment>-->
+<!--                <repository.id>ehire-dev-release</repository.id>-->
+<!--                <repository.name>Dev Repository</repository.name>-->
+<!--                <repository.url>http://10.100.3.237:8081/repository/ehire-server-releases/</repository.url>-->
+<!--            </properties>-->
+<!--            <activation>-->
+<!--                <activeByDefault>false</activeByDefault>-->
+<!--            </activation>-->
+<!--        </profile>-->
+<!--        <profile>-->
+<!--            <id>test</id>-->
+<!--            <properties>-->
+<!--                <package.environment>test</package.environment>-->
+<!--                <repository.id>ehire-qa</repository.id>-->
+<!--                <repository.name>QA Repository</repository.name>-->
+<!--                <repository.url>http://10.100.3.237:8081/repository/ehire-qa-snapshot/</repository.url>-->
+<!--            </properties>-->
+<!--            <activation>-->
+<!--                <activeByDefault>false</activeByDefault>-->
+<!--            </activation>-->
+<!--        </profile>-->
+<!--        <profile>-->
+<!--            <id>test-release</id>-->
+<!--            <properties>-->
+<!--                <package.environment>test-release</package.environment>-->
+<!--                <repository.id>ehire-qa-releases</repository.id>-->
+<!--                <repository.name>QA Repository</repository.name>-->
+<!--                <repository.url>http://10.100.3.237:8081/repository/ehire-qa-releases/</repository.url>-->
+<!--            </properties>-->
+<!--            <activation>-->
+<!--                <activeByDefault>false</activeByDefault>-->
+<!--            </activation>-->
+<!--        </profile>-->
+<!--        <profile>-->
+<!--            <id>prod</id>-->
+<!--            <properties>-->
+<!--                <package.environment>prod</package.environment>-->
+<!--                <repository.id>maven-public</repository.id>-->
+<!--                <repository.name>Prod Repository</repository.name>-->
+<!--                <repository.url>https://nexus.51job.com/repository/maven-releases/</repository.url>-->
+<!--            </properties>-->
+<!--            <activation>-->
+<!--                <activeByDefault>false</activeByDefault>-->
+<!--            </activation>-->
+<!--        </profile>-->
+<!--    </profiles>-->
+
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-maven-plugin</artifactId>
+                    <version>${spring.boot.version}</version>
+                    <executions>
+                        <execution>
+                            <id>repackage</id>
+                            <goals>
+                                <goal>repackage</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
+
+    <!--    <distributionManagement>-->
+    <!--        <repository>-->
+    <!--            <id>${repository.id}</id>-->
+    <!--            <url>${repository.url}</url>-->
+    <!--            <name>${repository.name}</name>-->
+    <!--            <layout>default</layout>-->
+    <!--        </repository>-->
+    <!--    </distributionManagement>-->
+</project>

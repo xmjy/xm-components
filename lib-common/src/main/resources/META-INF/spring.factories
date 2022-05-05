@@ -1,0 +1,8 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+indi.xm.component.libcommon.config.EncryptInfoUtilConfig,\
+indi.xm.component.libcommon.config.MailUtilConfig,\
+indi.xm.component.libcommon.config.OpenfeignConfig,\
+indi.xm.component.libcommon.config.SmsUtilConfig,\
+  indi.xm.component.libcommon.config.SensorsConfig
+
+

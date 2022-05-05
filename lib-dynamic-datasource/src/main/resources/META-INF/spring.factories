@@ -1,0 +1,4 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+indi.xm.component.dynamic.datasource.config.db.DatabaseConfig
+
+
